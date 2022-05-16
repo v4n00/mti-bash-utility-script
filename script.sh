@@ -146,9 +146,19 @@ if [[ "$REPLY" == *[0-5] ]]; then
 			#if the file given is a regular file
 			else
 				echo -e "----------------------\nFile type: `file -b "$FILE"`"
-				echo "File size: `wc -c < "$FILE"`" 
-				echo "Line count: `wc -l < "$FILE"`"
-				echo "Word count: `wc -w < "$FILE"`"
+				read -rep $'----------------------\nWhat do you want to see? (1-file size, 2-line count, 3-word count): ' REPLY3
+				while [[ "$REPLY3" == *[1-3] ]]; do
+					if [[ "$REPLY3" == 1 ]]; then
+						echo -e "----------------------\nFile size: `wc -c < "$FILE"`"
+					fi
+					if [[ "$REPLY3" == 2 ]]; then
+						echo -e "----------------------\nLine count: `wc -l < "$FILE"`"
+					fi
+					if [[ "$REPLY3" == 3 ]]; then
+						echo -e "----------------------\nWord count: `wc -w < "$FILE"`"
+					fi
+					read -rep $'----------------------\nWhat do you want to see? (1-file size, 2-line count, 3-word count, 0 - exit): ' REPLY3
+				done
 			fi
 		else
 			echo -e "----------------------\n"$FILE" does not exist"
