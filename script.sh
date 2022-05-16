@@ -147,6 +147,7 @@ if [[ "$REPLY" == *[0-5] ]]; then
 			else
 				echo -e "----------------------\nFile type: `file -b "$FILE"`"
 				read -rep $'----------------------\nWhat do you want to see? (1-file size, 2-line count, 3-word count): ' REPLY3
+				# menu for selecting what to view
 				while [[ "$REPLY3" == *[1-3] ]]; do
 					if [[ "$REPLY3" == 1 ]]; then
 						echo -e "----------------------\nFile size: `wc -c < "$FILE"`"
