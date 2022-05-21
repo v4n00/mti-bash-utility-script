@@ -1,4 +1,4 @@
-This is an [31mtest[0m text file
-that can be used as an [31mtest[0m
-this string is an [31mtest[0m of a [31mline[0m
+This is an example text file
+that can be used as an example
+this string is an example of a string
 I dodged all danmaku in gensokyo
